@@ -21,16 +21,15 @@ This template is the basic structure for web apps we develop on the Business Int
 /src
 	/main
 		/java - controllers, models, services, repositories go here
-			/org
-				/tiaa
-					/bi
-						/[projectName] || /[projectName]/[subProjectName]
-							/config
-							/controller
-							/model
-							/repo
-							/service
-							/utility
+			/com
+				/jt
+					/web
+						/conf
+						/controller
+						/model
+						/repo
+						/service
+						/utility
 		/resources
 			application.properties - list of static values for project
 			log4j.properties - logging properties, set to show only INFO by default
@@ -79,8 +78,8 @@ Back-End
 	- Load it
 	- Disconnect it
 	- Rename the project
-	- Rename the packages from org.tiaa.bi.sample to org.tiaa.bi.[projectName]
-	- Update the annotation @ComponentScan in org.tiaa.bi.[projectName].config.ApplicationConfig to point to your new package name
+	- Rename the packages from com.jt.web to [domainName].[projectName]
+	- Update the annotation @ComponentScan in com.jt.web.[projectName].conf.ApplicationConfig to point to your new package name
 	- Update the <init-param></init-param> tags to point to your new configuration path in web.xml 
 	- Update gradle.properties and build.gradle with your new project name
 	- Remove any classes you do not want and this README.txt

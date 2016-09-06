@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.config;
+package com.jt.web.conf;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

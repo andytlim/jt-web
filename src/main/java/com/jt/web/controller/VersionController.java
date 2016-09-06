@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.controller;
+package com.jt.web.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;

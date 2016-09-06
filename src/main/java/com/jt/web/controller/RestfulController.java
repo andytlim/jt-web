@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.controller;
+package com.jt.web.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;

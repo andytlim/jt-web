@@ -11,9 +11,8 @@ task cleanDeploymentDir(type: Delete) {
 }
 
 task initNpm << {
-	executeCmd(projDir, 'npm config set proxy http://proxy.ops.tiaa-cref.org:8080/');
+	// executeCmd(projDir, 'npm config set proxy http://some.proxy.org:8080/');
 	executeCmd(projDir, 'npm config set registry https://registry.npmjs.org/');
-	//executeCmd(projDir, 'npm config set registry http://artifactory.ops.tiaa-cref.org/artifactory/api/npm/tiaa-ml-prod-npm');
 	executeCmd(projDir, 'npm install babel-cli babel-plugin-transform-react-jsx minime');
 }
 
@@ -93,5 +92,5 @@ def startTom() {
 
 def startWebLogic() {
  	//set CLASSPATH=D:\Weblogic\Middleware\wlserver_10.3\server\lib\weblogic.jar
- 	executeCmd("${weblogicHome}/user_projects/domains/atom_domain/bin", 'startWebLogic.cmd')
+ 	executeCmd("${weblogicHome}/user_projects/domains/[domainName]/bin", 'startWebLogic.cmd')
 }

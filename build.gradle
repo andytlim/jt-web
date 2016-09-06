@@ -9,7 +9,7 @@ project.ext {
     tomcatHome = System.getenv('TOMCAT_HOME')
     weblogicHome = System.getenv('WEBLOGIC_HOME')
     projDir = file('.').toString()
-    projectName = "Sample"
+    projectName = "jt-web"
     projectVersion = ""
 }
 

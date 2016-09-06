@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import org.tiaa.bi.sample.config.ApplicationProperties;
-import org.tiaa.bi.sample.model.Data;
+import com.jt.web.conf.ApplicationProperties;
+import com.jt.web.model.Data;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

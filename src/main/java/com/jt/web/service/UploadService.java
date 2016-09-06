@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.service;
+package com.jt.web.service;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
 
-import org.tiaa.bi.sample.model.FileModel;
+import com.jt.web.model.FileModel;
 
 public class UploadService {
 

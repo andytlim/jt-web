@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.model;
+package com.jt.web.model;
 
 import java.io.InputStream;
 

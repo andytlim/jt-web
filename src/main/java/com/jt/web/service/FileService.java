@@ -1,11 +1,11 @@
-package org.tiaa.bi.sample.service;
+package com.jt.web.service;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.List;
 
-import org.tiaa.bi.sample.model.FileModel;
+import com.jt.web.model.FileModel;
 
 public class FileService {
 	

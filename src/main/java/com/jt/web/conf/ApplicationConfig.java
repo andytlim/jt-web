@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
-@ComponentScan(basePackages = "org.tiaa.bi.sample")
+@ComponentScan(basePackages = "com.jt.web")
 @Configuration
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
 	

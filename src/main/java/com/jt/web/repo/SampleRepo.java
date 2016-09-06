@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.repo;
+package com.jt.web.repo;
 
 import org.springframework.stereotype.Repository;
 

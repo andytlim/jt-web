@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.utility;
+package com.jt.web.utility;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,4 +1,4 @@
-package org.tiaa.bi.sample.controller;
+package com.jt.web.controller;
 
 import javax.servlet.http.HttpServletResponse;
 

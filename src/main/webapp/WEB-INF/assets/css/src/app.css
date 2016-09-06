@@ -1,0 +1,113 @@
+html {
+	height: 100%;
+}
+body {
+  font-family:"Arial", Times New Roman, serif; 
+  font-size:11pt;
+  margin: 0px;
+  padding: 0px; 
+}
+div {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box;	/* Opera/IE 8+ */
+}
+textarea, input {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box;	/* Opera/IE 8+ */
+	border: 1px rgb(180,180,180) solid;
+	overflow:auto;
+	padding:0px;
+	margin:0px;
+}
+
+input[type='checkbox'] {cursor:pointer;}
+
+/* App */
+#app {
+	margin: 10px;
+}
+
+/* Header */
+#titleWrapper {
+	overflow: hidden;
+}
+#title {
+	float:left; 
+	padding:0px 5px 5px 5px; 
+	margin-top:34px; 
+	border-radius:5px; 
+	color:rgb(0,32,99); 
+	font-weight:bold; 
+	font-size:18pt;
+}
+#logo {
+	float: left;
+	width: 95px;
+}
+#coreValuesGraphic {width:100%; border-top:1px solid rgb(220,220,220);}
+#corevalues {width:100%; overflow:hidden;}
+img[name='corevalues'] {margin:auto; height:30px; width:1000px;}
+
+/* Notification */
+#notification {
+	display:none; 
+	width: 100%;
+	margin:20px auto 0 auto;
+	padding:2px;
+	border-radius:2px;
+	background-color: #CCFFCC;
+	border: 1px solid rgb(180,180,180);
+	font-weight:normal;
+}
+
+/* Footer */
+#footer {
+	position: absolute;
+	bottom: 0; 
+	left: 50%;
+	margin-left: -500px;
+	margin-bottom: 10px;
+	width:1000px; 
+	text-align:center; 
+	font-size:8pt;
+}
+
+/* Processing Pop Up */
+#processingWrapper {
+	display:none;
+}
+.backdrop {
+	position:fixed; 
+	top:0px; 
+	left:0px; 
+	height:100%; 
+	width:100%; 
+	background:#000; 
+	opacity:0.2;
+	filter:alpha(opacity=20); 
+	color:#FFF
+}
+#processingBox {
+	padding:10px; 
+	border:1px rgb(130,130,130) solid; 
+	border-radius:5px; 
+	position:fixed; 
+	margin-top:-100px; 
+	margin-left:-150px; 
+	top:50%; 
+	left:50%; 
+	width:300px; 
+	background:#FFF; 
+	color:#000; 
+}
+#processingMsg {
+	margin:5px auto 0px auto; 
+	text-align:center;
+}
+#processingImg {
+	margin:auto; 
+	width:220px;
+}

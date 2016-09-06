@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- Scans within the base package of the application for @Components to configure as beans -->
+ 	<!-- <context:component-scan base-package="com.tiaa.bi.sample" />
+
+	<!-- Process annotations on registered beans like @Autowired... -->
+	<!-- <context:annotation-config /> -->
+
+	<!-- This tag registers the DefaultAnnotationHandlerMapping and AnnotationMethodHandlerAdapter 
+		beans that are required for Spring MVC -->
+	<!-- <mvc:annotation-driven /> -->
+
+	<!-- Exception Resolver that resolves exceptions through @ExceptionHandler 
+		methods -->
+	<!-- <bean
+		class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver" /> -->
+
+	<!-- This tag allows for mapping the DispatcherServlet to "/" -->
+	<!-- <mvc:default-servlet-handler /> -->
+
+	<!-- resources exclusions from servlet mapping -->
+	<!-- <mvc:resources mapping="/assets/**" location="/WEB-INF/assets/" /> -->
+	
+	<!-- View Resolver for JSPs -->
+	<!-- <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/templates/" />
+		<property name="suffix" value=".jsp" />
+	</bean> -->
+</beans>

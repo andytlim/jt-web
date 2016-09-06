@@ -1,0 +1,26 @@
+group 'org.tiaa.bi.sample'
+
+apply plugin: 'tiaa-java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+project.ext {
+    tomcatHome = System.getenv('TOMCAT_HOME')
+    weblogicHome = System.getenv('WEBLOGIC_HOME')
+    projDir = file('.').toString()
+    projectName = "Sample"
+    projectVersion = ""
+}
+
+war {
+    baseName = "${projectName}"
+    version =  "${projectVersion}"
+	webInf {
+		into('classes') {
+			from sourceSets.main.java
+		}
+	}
+}
+
+apply from: 'tasks.gradle'

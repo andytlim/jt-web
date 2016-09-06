@@ -1,0 +1,97 @@
+/* tasks.gradle version 1.0 */
+
+/*** TASKS ***/
+task buildAssets << {
+	minify()
+	buildReact()
+}
+
+task cleanDeploymentDir(type: Delete) {
+	delete fileTree(dir: "${tomcatHome}/webapps")
+}
+
+task initNpm << {
+	executeCmd(projDir, 'npm config set proxy http://proxy.ops.tiaa-cref.org:8080/');
+	executeCmd(projDir, 'npm config set registry https://registry.npmjs.org/');
+	//executeCmd(projDir, 'npm config set registry http://artifactory.ops.tiaa-cref.org/artifactory/api/npm/tiaa-ml-prod-npm');
+	executeCmd(projDir, 'npm install babel-cli babel-plugin-transform-react-jsx minime');
+}
+
+task tomcatRedeploy << {
+	deployToTomcat()
+}
+
+task tomcatStart << {
+    deployToTomcat()
+    startTom()
+}
+
+task weblogicStart << {
+    startWebLogic()
+}
+
+task deployToWeblogic << {
+	deployToWeblogic()
+}
+
+task updateVersion << { 
+	Properties props = new Properties() 
+	File appPropsFile = new File(file('.').toString() +'/src/main/resources/application.properties')
+	props.load(appPropsFile.newDataInputStream())
+	Integer nextbuildnum = ( ((props.getProperty('project.version')) as BigDecimal) + 1 ) 
+	props.setProperty('project.version', nextbuildnum.toString())
+	props.store(appPropsFile.newWriter(), null) 
+	props.load(appPropsFile.newDataInputStream()) 
+} 
+
+/*** TASK ORDER ***/
+tasks.war.dependsOn(buildAssets)
+tasks.war.dependsOn(updateVersion)
+tasks.tomcatRedeploy.dependsOn(build)
+tasks.tomcatStart.dependsOn(build)
+tasks.tomcatStart.dependsOn(cleanDeploymentDir)
+
+/*** DEFINITIONS ***/
+def buildReact() {
+	executeCmd(projDir, 'babel src/main/webapp/WEB-INF/assets/react/jsx -d src/main/webapp/WEB-INF/assets/react/build')
+}
+
+def deployToTomcat() {
+	delete "${tomcatHome}/webapps/${projectName}"
+	copy {
+	    from war
+	    into "${tomcatHome}/webapps"
+    }
+}
+
+def deployToWeblogic() {
+	//executeCmd("${weblogicHome}/wlserver_10.3/server/lib", "java -jar weblogic.jar -classpath weblogic.Deployer -adminurl t3://localhost:8001 -username weblogic -password weblogic123 -deploy -name ${projectName} -targets AdminServer -source " + war)
+	println war
+}
+
+def executeCmd(dir, cmd) {
+	exec {
+	    workingDir dir
+		commandLine 'cmd', '/c', cmd
+		
+		standardOutput = new ByteArrayOutputStream()
+		
+		ext.output = {
+		    return standardOutput.toString()
+		}
+	}
+}
+
+def minify() {
+	executeCmd(projDir, 'minime')
+}
+
+
+def startTom() {
+	executeCmd("${tomcatHome}/bin", 'startup.bat')
+}
+
+def startWebLogic() {
+ 	//set CLASSPATH=D:\Weblogic\Middleware\wlserver_10.3\server\lib\weblogic.jar
+ 	executeCmd("${weblogicHome}/user_projects/domains/atom_domain/bin", 'startWebLogic.cmd')
+}

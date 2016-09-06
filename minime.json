@@ -1,0 +1,20 @@
+{
+    "js": [
+        {
+            "source": "src/main/webapp/WEB-INF/assets/js/src",
+            "target": "src/main/webapp/WEB-INF/assets/js/dist",
+            "map": {
+    			"app.min.js" : [ "app.js" ]
+            }
+        }
+    ],
+    "css": [
+        {
+            "source": "src/main/webapp/WEB-INF/assets/css/src",
+            "target": "src/main/webapp/WEB-INF/assets/css/dist",
+            "map": {
+                "app.min.css" : [ "app.css" ]
+            }
+        }
+    ]
+}

@@ -25,6 +25,12 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/assets/**")
 				.addResourceLocations("/WEB-INF/assets/")
 				.setCachePeriod(31556926);
+				
+		registry.addResourceHandler("swagger-ui.html")
+	        	.addResourceLocations("classpath:/META-INF/resources/");
+	 
+	    	registry.addResourceHandler("/webjars/**")
+	      		.addResourceLocations("classpath:/META-INF/resources/webjars/");		
 	}
 
 	@Override

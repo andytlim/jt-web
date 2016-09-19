@@ -14,6 +14,9 @@ dependencies {
     compile 'org.springframework:spring-webmvc:3.2.15.RELEASE'
     compile 'org.springframework:spring-jdbc:3.2.15.RELEASE'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.5'
+
+    //JSCH
+    compile 'com.jcraft:jsch:0.1.53'   
 	
     // Rest Docs
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.5.0'
@@ -25,5 +28,5 @@ dependencies {
     testCompile 'org.springframework:spring-test:4.2.5.RELEASE'
     
     // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-yarn-client
-	compile group: 'org.apache.hadoop', name: 'hadoop-yarn-common', version: '2.6.0-cdh5.7.0'
+    compile group: 'org.apache.hadoop', name: 'hadoop-yarn-common', version: '2.6.0-cdh5.7.0'
 }
